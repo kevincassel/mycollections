@@ -7,13 +7,15 @@
     <h1><%= @video_game.title %></h1>
 
     <div class="show-buttons">
-      <button type="button" class="btn btn-outline-secondary show-btn">+</button>
-      <button type="button" class="btn btn-outline-secondary show-btn">-</button>
+      <a href="#" class="show-btn">+</a>
+      <a href="#" class="show-btn">-</a>
     </div>
 
   </div>
 
-    <p>Details</p>
+  <div class="show-bottom">
+
+    <h4>Details</h4>
 
     <p>Platform</p>
 
@@ -27,9 +29,11 @@
 
     <h3><%= @video_game.editor %></h3>
 
-    <p>Description</p>
+    <h4>Description</h4>
 
-    <p><%= @video_game.description %></p>
+    <p id="description"><%= @video_game.description %></p>
+
+  </div>
 
 </div>
 
