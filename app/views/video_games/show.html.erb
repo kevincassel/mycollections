@@ -1,1 +1,39 @@
-<h1>THIS IS A GAME SHOW</h1>
+<div class="container">
+
+  <div class="show-top">
+
+    <img src="https://www.argusjeux.fr/medias/mario-kart-super-circuit-e58327.jpg"/>
+
+    <h1><%= @video_game.title %></h1>
+
+    <div class="show-buttons">
+      <a href="#" class="show-btn">+</a>
+      <a href="#" class="show-btn">-</a>
+    </div>
+
+  </div>
+
+  <div class="show-bottom">
+
+    <h4>Details</h4>
+
+    <p>Platform</p>
+
+    <h3><%= @video_game.platform %></h3>
+
+    <p>Release</p>
+
+    <h3>2002</h3>
+
+    <p>Developer(s)</p>
+
+    <h3><%= @video_game.editor %></h3>
+
+    <h4>Description</h4>
+
+    <p id="description"><%= @video_game.description %></p>
+
+  </div>
+
+</div>
+
