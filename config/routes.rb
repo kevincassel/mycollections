@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources  :video_games , only: [:index, :show]
   resources  :users , only: [:show]
   resources :shops, only: [:index]
+  resources :messages, only: [:index, :show]
   # resources :collections, only: [:index, :show]
 end
