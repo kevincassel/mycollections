@@ -1,5 +1,21 @@
 .btn {
-    opacity: 0.7;
     margin: 10px;
     color: white;
+}
+
+.show-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-btn {
+  margin: 20px;
+  padding: 0px 42px;
+  border: 2px, #7c7c7c;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #00a478;
+  font-size: 40px;
+  font-weight: bold;
 }
