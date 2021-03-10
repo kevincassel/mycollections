@@ -1,0 +1,11 @@
+<h2>INDEX DES SHOPS</h2>
+
+<% @shops.each do |shop|  %>
+  <div class="card-product">
+    <img src="https://image.jeuxvideo.com/medias-crop-1200-675/157859/1578593049-83-card.jpg" />
+    <div class="card-product-infos">
+      <h2><%= shop.name %></h2>
+      <h3><%= shop.address %></h3>
+    </div>
+  </div>
+<% end %>
