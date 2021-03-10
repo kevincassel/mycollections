@@ -1,6 +1,7 @@
 .btn {
-    margin: 10px;
-    color: white;
+  margin: 10px;
+  color: white;
+  opacity: 0.7;
 }
 
 .show-btn {
@@ -12,4 +13,10 @@
   color: #16c79a;
   font-size: 40px;
   font-weight: bold;
+}
+
+#scrollUp {
+  width:30px ;
+  height: 30px;
+  margin: 15px;
 }
