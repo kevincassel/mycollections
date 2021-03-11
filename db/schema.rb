@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2021_03_10_214138) do
     t.bigint "user_id", null: false
     t.bigint "video_game_id", null: false
     t.string "user_comment"
-    t.bigint "shop_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "shop_id"
     t.index ["shop_id"], name: "index_collections_on_shop_id"
     t.index ["user_id"], name: "index_collections_on_user_id"
     t.index ["video_game_id"], name: "index_collections_on_video_game_id"

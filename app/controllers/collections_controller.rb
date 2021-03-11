@@ -1,19 +1,24 @@
 class CollectionsController < ApplicationController
 
+  def index
+    @collections = Collection.all
+  end
+
+  def show
+    @collection = Collection.find(params[:id])
+  end
+
   def create
-    @collection = Collection.new(collection_params)
+    @collection = Collection.new
+    @collection.video_game = VideoGame.find(params[:video_game_id])
     @collection.user = current_user
-      if @collection.save
-        redirect_to @collection
-      else
-        render :new
-      end
+    redirect_to @collection if @collection.save
   end
 
   private
 
-  def stone_params
-    params.require(:collection).permit(:title, :platform, :editor, :description)
+  def collection_params
+    params.require(:collection).permit(:video_game_id)
   end
 
 end

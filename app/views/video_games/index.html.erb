@@ -1,21 +1,18 @@
-<div class="card-product">
-  <img src="https://www.argusjeux.fr/medias/mario-kart-super-circuit-e58327.jpg" />
-  <div class="card-product-infos">
-    <h2>Super Mario Kart</h2>
-    <h3>Game Boy Advance</h3>
-    <p>Inteligent Systems</p>
-    <p>2002</p>
-    <%= link_to collections_path(user:current_user, video_games:"mario"), method: :post do %>
-      <img id="add-icon" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0zMDQgNTEyaC05NmMtMTcuNjc5Njg4IDAtMzItMTQuMzIwMzEyLTMyLTMydi0xNDRoLTE0NGMtMTcuNjc5Njg4IDAtMzItMTQuMzIwMzEyLTMyLTMydi05NmMwLTE3LjY3OTY4OCAxNC4zMjAzMTItMzIgMzItMzJoMTQ0di0xNDRjMC0xNy42Nzk2ODggMTQuMzIwMzEyLTMyIDMyLTMyaDk2YzE3LjY3OTY4OCAwIDMyIDE0LjMyMDMxMiAzMiAzMnYxNDRoMTQ0YzE3LjY3OTY4OCAwIDMyIDE0LjMyMDMxMiAzMiAzMnY5NmMwIDE3LjY3OTY4OC0xNC4zMjAzMTIgMzItMzIgMzJoLTE0NHYxNDRjMCAxNy42Nzk2ODgtMTQuMzIwMzEyIDMyLTMyIDMyem0wIDAiIGZpbGw9IiM0OGM4ZWYiLz48L3N2Zz4="/>
-    <% end %>
+<% @video_games.each do |video_game| %>
+  <div class="card-product">
+    <img src="https://www.argusjeux.fr/medias/mario-kart-super-circuit-e58327.jpg" />
+    <div class="card-product-infos">
+      <h2><%= video_game.title %></h2>
+      <h3><%= video_game.platform %></h3>
+      <p><%= video_game.editor %></p>
+      <p><%= video_game.year %></p>
+      <%= link_to video_game_collections_path(video_game), method: :post do %>
+        <img id="add-icon" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0zMDQgNTEyaC05NmMtMTcuNjc5Njg4IDAtMzItMTQuMzIwMzEyLTMyLTMydi0xNDRoLTE0NGMtMTcuNjc5Njg4IDAtMzItMTQuMzIwMzEyLTMyLTMydi05NmMwLTE3LjY3OTY4OCAxNC4zMjAzMTItMzIgMzItMzJoMTQ0di0xNDRjMC0xNy42Nzk2ODggMTQuMzIwMzEyLTMyIDMyLTMyaDk2YzE3LjY3OTY4OCAwIDMyIDE0LjMyMDMxMiAzMiAzMnYxNDRoMTQ0YzE3LjY3OTY4OCAwIDMyIDE0LjMyMDMxMiAzMiAzMnY5NmMwIDE3LjY3OTY4OC0xNC4zMjAzMTIgMzItMzIgMzJoLTE0NHYxNDRjMCAxNy42Nzk2ODgtMTQuMzIwMzEyIDMyLTMyIDMyem0wIDAiIGZpbGw9IiM0OGM4ZWYiLz48L3N2Zz4="/>
+      <% end %>
+    </div>
   </div>
-</div>
-
-
-<%= @video_games %>
-
-
+<% end %>
 
 <div id="scrollUp" class = "mx-auto">
-<a href="#top"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyNTYiIHkxPSI1MTQiIHgyPSIyNTYiIHkyPSIyIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgNTE0KSI+DQoJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzJBRjU5OCIvPg0KCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDlFRkQiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzFfKTsiIGQ9Ik01MTIsNDBIMFYwaDUxMlY0MHogTTM1OC4xNDMsMTg1Ljg1OEwyNTYuMDgsODMuNzk1TDE1Mi45MzgsMTg1Ljc3OGwyOC4xMjMsMjguNDQzDQoJTDIzNiwxNTkuOTAxVjUxMmg0MFYxNjAuMjg1bDUzLjg1Nyw1My44NTdMMzU4LjE0MywxODUuODU4eiIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="/></a>
+  <a href="#top"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyNTYiIHkxPSI1MTQiIHgyPSIyNTYiIHkyPSIyIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgNTE0KSI+DQoJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzJBRjU5OCIvPg0KCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDlFRkQiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzFfKTsiIGQ9Ik01MTIsNDBIMFYwaDUxMlY0MHogTTM1OC4xNDMsMTg1Ljg1OEwyNTYuMDgsODMuNzk1TDE1Mi45MzgsMTg1Ljc3OGwyOC4xMjMsMjguNDQzDQoJTDIzNiwxNTkuOTAxVjUxMmg0MFYxNjAuMjg1bDUzLjg1Nyw1My44NTdMMzU4LjE0MywxODUuODU4eiIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="/></a>
 </div>
