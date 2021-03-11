@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources  :users , only: [:show]
   resources :shops, only: [:index]
   resources :messages, only: [:index, :show]
+  resources :collections, only: [:create, :new]
   # resources :collections, only: [:index, :show]
 end
