@@ -1,5 +1,4 @@
 class CollectionsController < ApplicationController
-
   def index
     @collections = Collection.all
   end
@@ -20,5 +19,4 @@ class CollectionsController < ApplicationController
   def collection_params
     params.require(:collection).permit(:video_game_id)
   end
-
 end
