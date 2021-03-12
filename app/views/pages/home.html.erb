@@ -6,19 +6,6 @@
   <p>Buid your collection and share it with your friends!</p>
 </div>
 
-<div class = "formsearch flexbox">
-  <div class="mx-auto" style="width: 300px;">
-    <%= form_tag video_games_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a game"
-      %>
-      <%= submit_tag "Search", class: "btn btn-warning" %>
-    <% end %>
-  </div>
-</div>
-
 
 <div class="mx-auto" style="width: 200px;">
   <%= link_to "DISCOVER ALL OUR VIDEO GAMES", video_games_path, class: "btn btn-primary rounded-pill" %>
