@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :shops, only: [:index]
   resources :messages, only: [:index, :show]
-  resources :collections, only: [:index, :show, :create]
+
+  resources :collections, only: [:index, :show, :create, :destroy]
+
 end
