@@ -17,8 +17,9 @@ class CollectionsController < ApplicationController
   end
 
   def destroy
-    @collection.video_game = VideoGame.find(params[:video_game_id])
-    @collection.video_game.destroy
+    @collection = Collection.find(params[:id])
+    # @collection.video_game = VideoGame.find(params[:video_game_id])
+    @collection.destroy
     redirect_to collections_path
   end
 
