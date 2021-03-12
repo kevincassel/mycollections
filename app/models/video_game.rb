@@ -4,7 +4,7 @@ class VideoGame < ApplicationRecord
   require "net/http"
 
 
-  
+
   def self.searchagame
   url = URI("https://api.igdb.com/v4/games")
 
@@ -20,7 +20,7 @@ class VideoGame < ApplicationRecord
 
   response = https.request(request)
   @games = response.read_body
-  
+
   end
 
 end
