@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.new
-    @collection.video_game = VideoGame.find(params[:video_game_id])
+    @collection.video_game = VideoGame.find(params[:video_game])
     @collection.user = current_user
     redirect_to @collection if @collection.save
   end
@@ -18,7 +18,7 @@ class CollectionsController < ApplicationController
   private
 
   def collection_params
-    params.require(:collection).permit(:video_game_id)
+    params.require(:collection).permit(:video_game)
   end
 
 end
