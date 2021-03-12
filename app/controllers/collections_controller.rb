@@ -12,7 +12,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new
     @collection.video_game = VideoGame.find(params[:video_game])
     @collection.user = current_user
-    # redirect_to @collection if @collection.save
+    redirect_to @collection if @collection.save
   end
 
   def destroy
