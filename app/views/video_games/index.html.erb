@@ -13,7 +13,14 @@
   </div>
 <% end %>
 
-<%= @video_games %>
+<ul>
+  <% @video_games.each do |video_game| %>
+  <li><%= video_game["name"] %></li>
+  <li><%= video_game["platforms"] %></li>
+  <li><%= video_game["involved_companies"] %></li>
+  <li><%= video_game["release_dates"] %></li>
+  <% end %>
+</ul>
 
 
 

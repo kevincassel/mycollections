@@ -3,7 +3,7 @@ class VideoGamesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @video_games = VideoGame.searchagame
+    @video_games = VideoGame.searchagame
     @videogames = VideoGame.all
   end
 
