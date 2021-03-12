@@ -12,7 +12,8 @@ class CollectionsController < ApplicationController
     @collection = Collection.new
     @collection.video_game = VideoGame.find(params[:video_game])
     @collection.user = current_user
-    redirect_to @collection if @collection.save
+    @collection.shop = Shop.first
+    redirect_to video_games_path(query: params[:query]) if @collection.save
   end
 
   def destroy
