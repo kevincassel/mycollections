@@ -1,7 +1,7 @@
 <% @videogames.each do |video_game| %>
   <%= link_to video_game_path(video_game) do %>
     <div class="card-product">
-      <img src="https://www.argusjeux.fr/medias/mario-kart-super-circuit-e58327.jpg" />
+      <img src="<%= video_game.picture %>" />
       <div class="card-product-infos">
         <h2><%= video_game.title %></h2>
         <h3><%= video_game.platform %></h3>
