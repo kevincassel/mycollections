@@ -16,6 +16,7 @@ class VideoGamesController < ApplicationController
 
   def show
     @video_game = VideoGame.find(params[:id])
+    @collection = Collection.new
   end
 
 end
