@@ -1,13 +1,6 @@
 class VideoGame < ApplicationRecord
 
-  require "uri"
-  require "net/http"
- 
-
-
-  def self.searchagame
-
-
+  def self.searchagame(query)
     require "uri"
     require "net/http"
     
@@ -21,11 +14,10 @@ class VideoGame < ApplicationRecord
     request["Authorization"] = "Bearer 5jbpjxhwzus3hh29qt936qu93tb7ip"
     request["Content-Type"] = "text/plain"
     request["Cookie"] = "__cfduid=d6058770d0ed32c11d8e9b48fe090c0811615375495"
-    request.body = "search \"zelda\"; fields name, platforms.name, first_release_date, summary, genres.name;\r\n\r\n"
+    request.body = "search \"#{query}\"; fields name, platforms.name, first_release_date, summary, genres.name, cover.url;\r\n\r\n"
     
     response = https.request(request)
     JSON.parse(response.read_body)
-    
 
   end
 
