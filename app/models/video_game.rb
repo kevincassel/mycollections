@@ -4,8 +4,9 @@ class VideoGame < ApplicationRecord
   require "net/http"
  
 
-  
+
   def self.searchagame
+
 
     require "uri"
     require "net/http"
@@ -25,7 +26,7 @@ class VideoGame < ApplicationRecord
     response = https.request(request)
     JSON.parse(response.read_body)
     
-  
+
   end
 
 end
