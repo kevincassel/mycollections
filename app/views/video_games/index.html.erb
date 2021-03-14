@@ -23,13 +23,13 @@
 
 
 
-  <% @games.each do |video_game| %>
+  <% @games.each do |game| %>
     <div class="card-product">
-      <img src="https://www.argusjeux.fr/medias/mario-kart-super-circuit-e58327.jpg" />
+      <img src= <%= game["cover"]["url"] %> />
       <div class="card-product-infos">
-        <h2><%= video_game["name"] %></h2>
-        <h3><%= video_game["platforms"].first["name"] %></h3>
-        <p><%= " #{video_game["genres"].first["name"]}" %></p>
+        <h2><%= game["name"] %></h2>
+        <h3><%= game["platforms"].first["name"] %></h3>
+        <p><%= game["genres"].first["name"] %></p>
       </div>
   </div>
   <% end %>
