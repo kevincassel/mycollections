@@ -1,7 +1,7 @@
 <% @videogames.each do |video_game| %>
   <%= link_to video_game_path(video_game) do %>
     <div class="card-product">
-      <img src="https://www.argusjeux.fr/medias/mario-kart-super-circuit-e58327.jpg" />
+      <img src=<%= video_game.picture %> />
       <div class="card-product-infos">
         <h2><%= video_game.title %></h2>
         <h3><%= video_game.platform %></h3>
@@ -18,18 +18,3 @@
 <div id="scrollUp" class = "mx-auto">
   <a href="#top"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyNTYiIHkxPSI1MTQiIHgyPSIyNTYiIHkyPSIyIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgNTE0KSI+DQoJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzJBRjU5OCIvPg0KCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDlFRkQiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzFfKTsiIGQ9Ik01MTIsNDBIMFYwaDUxMlY0MHogTTM1OC4xNDMsMTg1Ljg1OEwyNTYuMDgsODMuNzk1TDE1Mi45MzgsMTg1Ljc3OGwyOC4xMjMsMjguNDQzDQoJTDIzNiwxNTkuOTAxVjUxMmg0MFYxNjAuMjg1bDUzLjg1Nyw1My44NTdMMzU4LjE0MywxODUuODU4eiIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="/></a>
 </div>
-
-
-
-
-
-  <% @games.each do |game| %>
-    <div class="card-product">
-      <img src= <%= game["cover"]["url"] %> />
-      <div class="card-product-infos">
-        <h2><%= game["name"] %></h2>
-        <h3><%= game["platforms"].first["name"] %></h3>
-        <p><%= game["genres"].first["name"] %></p>
-      </div>
-  </div>
-  <% end %>

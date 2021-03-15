@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :shops, only: [:index]
   resources :messages, only: [:index, :show]
 
-  resources :collections, only: [:index, :show, :create, :destroy]
+  resources :collections, only: [:index, :show, :new, :create, :destroy]
 
 end
