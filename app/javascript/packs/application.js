@@ -38,3 +38,16 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+
+// SWEETALERT/////
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Great!",
+  text: "The game have been added",
+  icon: "success"
+}, (value) => {
+  console.log(value);
+});
