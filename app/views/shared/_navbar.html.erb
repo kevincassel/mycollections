@@ -9,9 +9,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to :back do %>
+        <div type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <%= image_tag "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwIiB5MT0iMjU4LjAwMDIiIHgyPSI1MTIuMDAwNCIgeTI9IjI1OC4wMDAyIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgNTE0LjAwMDQpIj4NCgk8c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojODBEOEZGIi8+DQoJPHN0b3AgIG9mZnNldD0iMC4xNiIgc3R5bGU9InN0b3AtY29sb3I6Izg4RDFGRiIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuNDEzIiBzdHlsZT0ic3RvcC1jb2xvcjojOUZCRUZFIi8+DQoJPHN0b3AgIG9mZnNldD0iMC43MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiNDNEEwRkQiLz4NCgk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojRUE4MEZDIi8+DQo8L2xpbmVhckdyYWRpZW50Pg0KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8xXyk7IiBkPSJNNS44NjYsMjQxLjg0M2MwLjAwNi0wLjAwNiwwLjAxMS0wLjAxMywwLjAxOC0wLjAxOWwxMDQuNTA0LTEwNA0KCWM3LjgyOS03Ljc5MSwyMC40OTMtNy43NjIsMjguMjg1LDAuMDY4YzcuNzkyLDcuODI5LDcuNzYyLDIwLjQ5Mi0wLjA2NywyOC4yODRMNjguNDQyLDIzNkg0OTJjMTEuMDQ2LDAsMjAsOC45NTQsMjAsMjANCgljMCwxMS4wNDYtOC45NTQsMjAtMjAsMjBINjguNDQybDcwLjE2Miw2OS44MjRjNy44MjksNy43OTIsNy44NTksMjAuNDU1LDAuMDY3LDI4LjI4NGMtNy43OTMsNy44MzEtMjAuNDU3LDcuODU4LTI4LjI4NSwwLjA2OA0KCWwtMTA0LjUwNC0xMDRjLTAuMDA2LTAuMDA2LTAuMDExLTAuMDEzLTAuMDE4LTAuMDE5Qy0xLjk2OCwyNjIuMzM5LTEuOTQzLDI0OS42MzUsNS44NjYsMjQxLjg0M3oiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" %>
-        <% end %>
+        </div>
       </li>
 
     </ul>
@@ -61,4 +61,30 @@
     </ul>
   </div>
 </div>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar">TEST</span>
+                    <span class="icon-bar">PEST</span>
+                    <span class="icon-bar">PROUT</span>
+                </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to shops_path do %>
+            <%= image_tag "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEyLjA2NiA1MTIuMDY2IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMi4wNjYgNTEyLjA2NiIgd2lkdGg9IjUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyNTYuMDMzIiB4Mj0iMjU2LjAzMyIgeTE9IjAiIHkyPSI1MTIuMDY2Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM4ZGY0OWIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1ODljZjkiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGQ9Im00MzQuMDMzIDM1N2MwIDExLjA0Ni04Ljk1NCAyMC0yMCAyMHMtMjAtOC45NTQtMjAtMjAgOC45NTQtMjAgMjAtMjAgMjAgOC45NTQgMjAgMjB6bTc4LTI5N3YxOTQuMTE0Yy0xMS40ODctMTEuNzMtMjUuMDExLTIxLjQ1NS00MC0yOC41OTJ2LTE2NS41MjJjMC0xLjUzMS0uMTg5LTMuMDE2LS41MTYtNC40NDlsLTIyNy4zODYgMjI3LjM4NiAzMi42OTQgMzIuNjk0Yy0zLjExOCAxMS41ODktNC43OTIgMjQuODEtNC43OTIgMzcuMzcgMCA0LjU1NC4yNjYgMTAuNTU2Ljc5NSAxNS4yMDNsLTExNy4zNTctMTE3LjM1OC02OC4xNTQgNjguMTU0IDg5IDg5LTY0IDY0aDIwOS4zNzdjMS4wNzUgMS4zOTQgMi4xNjcgMi43OTMgMy4yNzggNC4xOTcgMTEuNDUyIDE0LjQ4MiAyMi43NTUgMjYuODc2IDMxLjM2IDM1LjgwM2gtMjk2LjI5OWMtMzMuMDg0IDAtNjAtMjYuOTE2LTYwLTYwdi0zOTJjMC0zMy4wODQgMjYuOTE2LTYwIDYwLTYwaDM5MmMzMy4wODQgMCA2MCAyNi45MTYgNjAgNjB6bS00NTMgMjg3LjI4NC0xOSAxOXY4NS43MTZjMCA5Ljc3NSA3LjA2MyAxNy44OTQgMTYuMzQ2IDE5LjYxOGw2My4zNy02My42MTh6bTY4LjE1NC0xMjQuNzIyLTg3LjE1NC04Ny4xNTR2MTc0LjMwOXptMzAzLjMxMS0xODIuNTYyaC0zNzAuNDY1Yy0xMS4wMjggMC0yMCA4Ljk3Mi0yMCAyMHYxOC44MzlsMTc1LjgxNCAxNzUuODEzIDY2LjQ2NC02Ni40NjUtNjguNDg0LTY5LjExIDI4LjQxMy0yOC4xNTUgNjguMzU2IDY4Ljk4MXptODEuNTM1IDMxNS45NTRjMCAyNy4xNTgtMTQuOSA1OS44NTEtNDQuMjg2IDk3LjE3Mi0yMC43MjEgMjYuMzE0LTQxLjIzIDQ1LjQ3LTQyLjA5NCA0Ni4yNzNsLTEzLjYyIDEyLjY2Ny0xMy42Mi0xMi42NjdjLS44NjMtLjgwMy0yMS4zNzMtMTkuOTU4LTQyLjA5NC00Ni4yNzMtMjkuMzg2LTM3LjMyMS00NC4yODYtNzAuMDE0LTQ0LjI4Ni05Ny4xNzIgMC01NS42NjcgNDQuODU5LTEwMC45NTQgMTAwLTEwMC45NTRzMTAwIDQ1LjI4OCAxMDAgMTAwLjk1NHptLTQwIDBjMC0zMy42MS0yNi45MTYtNjAuOTU0LTYwLTYwLjk1NHMtNjAgMjcuMzQ0LTYwIDYwLjk1NGMwIDMwLjQgMzYuMjMyIDc1LjI5MyA1OS45NzEgMTAwLjQ3MSA2Ljk4Mi03LjM3OSAxNS44NTMtMTcuMjYzIDI0LjYzNi0yOC40NTIgMjIuODI0LTI5LjA3NSAzNS4zOTMtNTQuNjUxIDM1LjM5My03Mi4wMTl6IiBmaWxsPSJ1cmwoI1NWR0lEXzFfKSIvPjwvc3ZnPg==" %>
+            Shops Map <% end %>
+        </li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
