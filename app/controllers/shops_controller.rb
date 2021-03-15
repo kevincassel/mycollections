@@ -4,7 +4,8 @@ class ShopsController < ApplicationController
 
   def index
     @shops = Shop.all
-
+    @ip = request.remote_ip
+    @ip1 = request.ip
     @markers = @shops.geocoded.map do |shop|
       {
         lat: shop.latitude,
