@@ -4,6 +4,11 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
+<%= request.location.city %>
+<%= @ip %>
+<%= @ip1 %>
+<%= request.location.country %>
+
 <% @shops.each do |shop|  %>
   <div class="card-product">
     <img src="https://image.jeuxvideo.com/medias-crop-1200-675/157859/1578593049-83-card.jpg" />
