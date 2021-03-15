@@ -1,11 +1,11 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+// .navbar {
+//   justify-content: space-between;
+//   background: white;
+// }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
 
 // // .navbar-lewagon .navbar-brand img {
 // //   width: 40px;
@@ -25,6 +25,43 @@ li img {
   margin-left: 2px;
 }
 
-.formsearch{
+.navbar-header .formsearch{
   width: 160px ;
+
+}
+.navbar-header .flex-box{
+  display: flex;
+  justify-content:space-between;
+}
+
+.navbar-header #profile{
+
+}
+
+.navbar-header {
+  margin: 4px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: darkgrey;
+}
+
+#case-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 2px;
+  border:1px solid rgba(255, 255, 255, 0.63);
 }
