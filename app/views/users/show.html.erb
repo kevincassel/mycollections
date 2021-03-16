@@ -33,3 +33,7 @@
 
 <%= cl_image_tag("sample",
       width: 400, height: 300, crop: :fill) %>
+
+<%= simple_form_for(article) do |f| %>
+  <%= f.input :photo, as: :file %>
+<% end %>
