@@ -3,7 +3,7 @@
 <% @collections.each do |collection| %>
       <%= link_to video_game_path(collection.video_game_id) do %>
         <div class="card-collection">
-          <img class="card-collection-pic" src="https://www.argusjeux.fr/medias/mario-kart-super-circuit-e58327.jpg"/>
+          <img class="card-collection-pic" src=<%= collection.video_game.picture %> />
           <div class="card-collection-infos">
             <%= link_to collection_path(collection), method: :delete, data: { confirm: "Are you sure you want to delete this game out of your collection ?" } do %>
               <div class="card-collection-remove">
