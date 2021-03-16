@@ -3,11 +3,12 @@ class VideoGamesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @games = VideoGame.searchagame(params[:query])
+    
     if params[:query].present?
       sql_query = " \
         title ILIKE :query \
         OR platform ILIKE :query \
+        OR editor ILIKE :query \
       "
       @videogames = VideoGame.where(sql_query, query: "%#{params[:query]}%")
     else
