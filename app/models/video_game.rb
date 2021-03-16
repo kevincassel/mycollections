@@ -20,5 +20,5 @@ class VideoGame < ApplicationRecord
     JSON.parse(response.read_body)
 
   end
-
+  
 end
