@@ -9,6 +9,9 @@
 # for request:body , involved_companies.company.name
 # for seed videogame, editor: game["involed_companies"]["company"]["name"]
 
+
+require "open-uri"
+
 def searchagame(query)
   require "uri"
   require "net/http"
@@ -54,7 +57,11 @@ VideoGame.destroy_all
 
 puts "Create Users"
 
-User.create!(first_name: "Pierre", last_name: "Quiroule", username: "Plouf", email: "papapa@gmail.com", password:"papapa")
+
+file = URI.open('https://avatars.githubusercontent.com/u/75837583?v=4')
+user = User.new( first_name: "Pierre", last_name: "Quiroule", username: "Plouf", email: "papapa@gmail.com", password:"papapa")
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.save
 
 puts "Create Video Games"
 
