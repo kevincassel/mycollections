@@ -1,8 +1,18 @@
 class CollectionsController < ApplicationController
 
   def index
-    @collections = Collection.all
+    if params[:query].present?
+      sql_query = " \
+        title ILIKE :query \
+        OR platform ILIKE :query \
+      "
+      @collections = Collection.joins(:video_game).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @collections = Collection.all
+    end
   end
+
+
 
   def show
     @collection = Collection.find(params[:id])
