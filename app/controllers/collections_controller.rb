@@ -32,15 +32,15 @@ class CollectionsController < ApplicationController
     # créer une collection avec ce jeu.
       game_title = params["game"]["name"] # nom du jeu recherché
       game = games.select { |game| game.title.end_with?(game_title) }
-      if game != []
-        @collection.video_game = VideoGame.find(game.first.id)
+      if game = []
+        game_info = {title: params["game"]["name"], platform: params["game"]["platforms"].first["name"], category: params["game"]["genres"].first["name"], description: params["game"]["summary"], picture: "https:#{params["game"]["cover"]["url"]}", year: params["game"]["first_release_date"] }
+        game_new = VideoGame.create(game_info)
+        @collection.video_game = VideoGame.find(game_new.id)
         @collection.user = current_user
         @collection.shop = Shop.first
         redirect_to new_collection_path(query: params[:query]) if @collection.save
       else
-        game_info = {title: params["game"]["name"], platform: params["game"]["platforms"].first["name"], category: params["game"]["genres"].first["name"], description: params["game"]["summary"], picture: "https:#{params["game"]["cover"]["url"]}", year: params["game"]["first_release_date"] }
-        game_new = VideoGame.create(game_info)
-        @collection.video_game = VideoGame.find(game_new.id)
+        @collection.video_game = VideoGame.find(game.first.id)
         @collection.user = current_user
         @collection.shop = Shop.first
         redirect_to new_collection_path(query: params[:query]) if @collection.save
