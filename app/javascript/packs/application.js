@@ -44,7 +44,7 @@ document.addEventListener('turbolinks:load', () => {
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
+initSweetalert('.sweet-alert-demo', {
   title: "Great!",
   text: "The game have been added",
   icon: "success"
