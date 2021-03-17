@@ -4,7 +4,7 @@
 
     <img src= <%= @video_game.picture %> />
 
-    <h1><%= @video_game.title %></h1>
+    <h1 id-="show-title"><%= @video_game.title %></h1>
 
     <%= link_to collections_path(video_game: @video_game), method: :post do %>
       <div id="show-btn">Add to my collection</div>
@@ -17,8 +17,8 @@
     <h3><%= @video_game.platform %></h3>
     <h4>Release</h4>
     <h3><%= @video_game.year %></h3>
-    <h4>Developer(s)</h4>
-    <h3><%= @video_game.editor %></h3>
+<!--     <h4>Developer(s)</h4>
+    <h3><%= @video_game.editor %></h3> -->
     <h4>Description</h4>
     <p><%= @video_game.description %></p>
   </div>
