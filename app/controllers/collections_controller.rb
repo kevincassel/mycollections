@@ -19,7 +19,6 @@ class CollectionsController < ApplicationController
       end
     end
   end
-
  
   def show
     @collection = Collection.find(params[:id])
