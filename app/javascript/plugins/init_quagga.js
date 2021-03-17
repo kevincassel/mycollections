@@ -27,9 +27,19 @@ const scan = () => {
     // we can extract the barcode with data.codeResult.code
     Quagga.onDetected((data) => {
         const barcode = data.codeResult.code;
+        const api_key = process.env.BARCODE_API_KEY;
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         // TODO: do something with your backend or frontend
-        console.log(barcode)
-    
+        console.log(barcode);
+        console.log(api_key);
+        Quagga.stop();
+        fetch(`https://api.barcodelookup.com/v2/products?barcode=${barcode}&formatted=y&key=${api_key}`)
+          .then(response => response.json())
+          .then((data) => {
+            console.log(data);
+            const name = data["products"].first["product_name"];
+            window.location = `collections/new/?query=${name}`;
+          });
         // you can call Quagga.stop() to stop the camera
       });
   }
