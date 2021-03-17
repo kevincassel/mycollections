@@ -1,13 +1,18 @@
 
  
-
-<%= form_tag collections_path, method: :get do%>
-  <%= select_tag "platform", options_for_select(["","PlayStation", "PlayStation 3"]) %>
-  <%= text_field_tag "title" %>
-  <%= submit_tag %>
-<% end %>
-
-
+<div class="flex-box encadrement">
+  <div class="flex_item">
+    <h3>MY GAMING ROOM</h3>
+  </div>
+  <div class="flex_item">
+    <%= form_tag collections_path, method: :get do%>
+      <%= select_tag "platform", options_for_select(["","PlayStation", "PlayStation 3"]) %>
+      <%= text_field_tag "title" %>
+      <%= submit_tag("Find") %>
+    <% end %>
+    </div>
+</div>
+    
  
 <% @collections.each do |collection| %>
   <%= link_to video_game_path(collection.video_game_id) do %>
