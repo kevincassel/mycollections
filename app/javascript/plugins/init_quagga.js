@@ -30,7 +30,7 @@ const scan = () => {
         const api_key = process.env.BARCODE_API_KEY;
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
         // TODO: do something with your backend or frontend
-        const url = `https://api.barcodelookup.com/v2/products?barcode=${barcode}&formatted=y&key=` + api_key;
+        const url = proxyurl + `https://api.barcodelookup.com/v2/products?barcode=${barcode}&formatted=y&key=` + api_key;
         console.log(barcode);
         console.log(api_key);
         Quagga.stop();
