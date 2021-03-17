@@ -9,10 +9,13 @@
   padding: 0px 42px;
   border: 1px solid #ececec;
   border-radius: 12px;
-  background-color:white;
-  color: #16c79a;
-  font-size: 40px;
+  background-color: #fff;
+  font-size: 20px;
   font-weight: bold;
+}
+
+.show-btn a{
+  color: black;
 }
 
 #scrollUp {
@@ -27,5 +30,4 @@
 
 .formsearch {
   display: flex;
-
 }
