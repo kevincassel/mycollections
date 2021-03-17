@@ -26,7 +26,21 @@ class CollectionsController < ApplicationController
   end
 
   def new
-    @games_api = VideoGame.searchagame(params[:query])
+    if params[:barecode].present?
+      api_key = ENV["BARCODE_API_KEY"]
+      url = "https://api.barcodelookup.com/v2/products?barcode=#{params[:barecode]}&formatted=y&key=" + api_key
+      uri = URI(url)
+      if response = Net::HTTP.get(uri) != "\n"
+        data = JSON.parse(response)
+        barcode = data["products"][0]["barcode_number"]
+        name = data["products"][0]["product_name"]
+        @games_api = VideoGame.searchagame(name)
+      else
+        redirect_to collections_path
+      end
+    else
+      @games_api = VideoGame.searchagame(params[:query])
+    end
   end
 
 
