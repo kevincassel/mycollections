@@ -12,6 +12,11 @@
   margin-right: 30px;
 }
 
+.card-product a:hover {
+ text-decoration: none;
+ color: grey;
+}
+
 .card-product img {
   height: 100%;
   width: 110px;
@@ -34,7 +39,15 @@
   font-size: 13px;
 }
 
-.card-product p {
+.card-product h4 {
+  margin-bottom: 0;
+  margin-top: 2px;
+  opacity: .7;
+  line-height: 1.8;
+  font-size: 11px;
+}
+
+ p {
   margin-top: 2px;
   margin-bottom: 0;
   margin-left: 0;
@@ -58,7 +71,7 @@
   width: 20px;
   object-fit: cover;
   right: 10px ;
-  top: 10px;
+  bottom: 10px;
 }
 
 #sub-icon {
@@ -67,7 +80,7 @@
   width: 20px;
   object-fit: cover;
   right: 10px ;
-  top: 10px;
+  bottom: 10px;
 }
 
 .dropdown{

@@ -1,38 +1,38 @@
 
  
-
-<%= form_tag collections_path, method: :get do%>
-  <%= select_tag "platform", options_for_select(["","PlayStation", "PlayStation 3"]) %>
-  <%= text_field_tag "title" %>
-  <%= submit_tag %>
+<div class="flex-box encadrement">
+  <div class="flex_item">
+    <h3>MY GAMING ROOM</h3>
+  </div>
+  <div class="flex_item">
+    <%= form_tag collections_path, method: :get do%>
+      <%= select_tag "platform", options_for_select(["","PlayStation", "PlayStation 3"]) %>
+      <%= text_field_tag "title" %>
+      <%= submit_tag("Find") %>
+    <% end %>
+    </div>
+</div>
+    
+ 
+<% @collections.each do |collection| %>
+  <%= link_to video_game_path(collection.video_game_id) do %>
+    <div class="card-product">
+      <img src=<%= collection.video_game.picture %> />
+      <div class="card-product-infos">
+        <h2><%= collection.video_game.title %></h2>
+        <h3><%= collection.video_game.platform %></h3>
+        <p><%= collection.video_game.editor %></p>
+        <p><%= collection.video_game.year %></p>
+  <% end %>
+    <%= link_to collection_path(collection), method: :delete, data: { confirm: "Are you sure you want to delete this game out of your collection ?" } do %>
+      <div id="minus">
+        <img class="card-collection-icon" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ2OXB0IiB2aWV3Qm94PSIwIC0xOTIgNDY5LjMzMzMzIDQ2OSIgd2lkdGg9IjQ2OXB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00MzcuMzMyMDMxLjE2Nzk2OWgtNDA1LjMzMjAzMWMtMTcuNjY0MDYyIDAtMzIgMTQuMzM1OTM3LTMyIDMydjIxLjMzMjAzMWMwIDE3LjY2NDA2MiAxNC4zMzU5MzggMzIgMzIgMzJoNDA1LjMzMjAzMWMxNy42NjQwNjMgMCAzMi0xNC4zMzU5MzggMzItMzJ2LTIxLjMzMjAzMWMwLTE3LjY2NDA2My0xNC4zMzU5MzctMzItMzItMzJ6bTAgMCIgZmlsbD0iI2ZmYzEwNyIvPjwvc3ZnPg==" />
+      </div>
+    <% end %>
+    </div>
+  </div>
 <% end %>
 
-
-<div class="cards">
-  <% @collections.each do |collection| %>
-     <div class ="card-category">
-        <div class="dropdown">
-          <img class="card-collection-pic"  src=<%= collection.video_game.picture %>  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#"><%= collection.video_game.title %></a>
-            <div class="mb-4">
-             <a class="dropdown-item" href="#"><%= collection.video_game.platform %></a>
-            </div> 
-            <%= link_to collection_path(collection), method: :delete, data: { confirm: "Are you sure you want to delete this game out of your collection ?" } do %>
-              <div id="minus">
-                <img class="card-collection-icon" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ2OXB0IiB2aWV3Qm94PSIwIC0xOTIgNDY5LjMzMzMzIDQ2OSIgd2lkdGg9IjQ2OXB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00MzcuMzMyMDMxLjE2Nzk2OWgtNDA1LjMzMjAzMWMtMTcuNjY0MDYyIDAtMzIgMTQuMzM1OTM3LTMyIDMydjIxLjMzMjAzMWMwIDE3LjY2NDA2MiAxNC4zMzU5MzggMzIgMzIgMzJoNDA1LjMzMjAzMWMxNy42NjQwNjMgMCAzMi0xNC4zMzU5MzggMzItMzJ2LTIxLjMzMjAzMWMwLTE3LjY2NDA2My0xNC4zMzU5MzctMzItMzItMzJ6bTAgMCIgZmlsbD0iI2ZmYzEwNyIvPjwvc3ZnPg==" />
-              </div>
-            <% end %>
-              <div id="detail">
-                <%= link_to video_game_path(collection.video_game_id) do %>
-                <img class="card-collection-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDIgOTggOTgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAyIDk4IDk4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KCS5zdDF7ZmlsbDp1cmwoI1NWR0lEXzJfKTt9Cgkuc3Qye2ZpbGw6dXJsKCNTVkdJRF8zXyk7fQo8L3N0eWxlPgo8Zz4KCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMV8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iNzguMjk5OCIgeTE9IjM4Ljc5OTgiIHgyPSI3OC4yOTk4IiB5Mj0iNjMuMjAwMiI+CgkJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBFRkQxIi8+CgkJPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBBQ0VBIi8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTc4LjMsMzguOGMtNi43LDAtMTIuMiw1LjUtMTIuMiwxMi4yYzAsNi43LDUuNSwxMi4yLDEyLjIsMTIuMlM5MC41LDU3LjcsOTAuNSw1MSAgIEM5MC41LDQ0LjMsODUsMzguOCw3OC4zLDM4Ljh6IE03OC4zLDU3LjJjLTMuNCwwLTYuMi0yLjgtNi4yLTYuMnMyLjgtNi4yLDYuMi02LjJzNi4yLDIuOCw2LjIsNi4yUzgxLjcsNTcuMiw3OC4zLDU3LjJ6Ii8+Cgk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzJfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjQ5IiB5MT0iMzguNzk5OCIgeDI9IjQ5IiB5Mj0iNjMuMjAwMiI+CgkJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBFRkQxIi8+CgkJPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBBQ0VBIi8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTQ5LDM4LjhjLTYuNywwLTEyLjIsNS41LTEyLjIsMTIuMmMwLDYuNyw1LjUsMTIuMiwxMi4yLDEyLjJjNi43LDAsMTIuMi01LjUsMTIuMi0xMi4yICAgQzYxLjIsNDQuMyw1NS43LDM4LjgsNDksMzguOHogTTQ5LDU3LjJjLTMuNCwwLTYuMi0yLjgtNi4yLTYuMnMyLjgtNi4yLDYuMi02LjJzNi4yLDIuOCw2LjIsNi4yUzUyLjQsNTcuMiw0OSw1Ny4yeiIvPgoJPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8zXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxOS43IiB5MT0iMzguNzk5OCIgeDI9IjE5LjciIHkyPSI2My4yMDAyIj4KCQk8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMEVGRDEiLz4KCQk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMEFDRUEiLz4KCTwvbGluZWFyR3JhZGllbnQ+Cgk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTkuNywzOC44QzEzLDM4LjgsNy41LDQ0LjMsNy41LDUxYzAsNi43LDUuNSwxMi4yLDEyLjIsMTIuMlMzMS45LDU3LjcsMzEuOSw1MSAgIEMzMS45LDQ0LjMsMjYuNCwzOC44LDE5LjcsMzguOHogTTE5LjcsNTcuMmMtMy40LDAtNi4yLTIuOC02LjItNi4yczIuOC02LjIsNi4yLTYuMmMzLjQsMCw2LjIsMi44LDYuMiw2LjJTMjMuMSw1Ny4yLDE5LjcsNTcuMnoiLz4KPC9nPgo8L3N2Zz4K" />
-                <% end %>
-              </div>
-            </div>
-        </div>
-      </div>
-  <% end %>
-</div>  
 
 <div>
   <%= link_to "add a game", new_collection_path %>
