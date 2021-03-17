@@ -25,6 +25,7 @@
   flex-direction: column;
   background-color: #343A40;
   color:white;
+  box-shadow:  2px 2px 2px lightgray;
 }
 
 .encadrement h3 {
@@ -32,3 +33,34 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+#platforms {
+  border-radius: 4px;
+  position: absolute;
+  right: 14px ;
+  bottom: 10px;
+  box-shadow:  2px 2px 2px lightgray;
+}
+
+.top-cadre {
+  position: relative;
+  height: 150px;
+}
+#searchgame{
+  color: darkgrey;
+  border-radius: 5px;
+  width: 380px;
+}
+
+.search {
+  text-align: center;
+  margin-top: -50px;
+  position: relative;
+}
+
+#find {
+  border-radius: 3px;
+  background-color: white;
+  color: darkgrey;
+}
+

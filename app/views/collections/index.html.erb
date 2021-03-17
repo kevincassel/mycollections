@@ -1,18 +1,16 @@
 
-
-<div class="flex-box encadrement">
-  <div class="flex_item">
+<div class="top-cadre">
+  <div class="flex-box encadrement">
     <h3>MY GAMING ROOM</h3>
   </div>
-  <div class="flex_item">
     <%= form_tag collections_path, method: :get do%>
-      <%= select_tag "platform", options_for_select(["","PlayStation", "PlayStation 3"]) %>
-      <%= text_field_tag "title" %>
-      <%= submit_tag("Find") %>
+      <%= select_tag "platform", options_for_select(["","PlayStation","PlayStation 2", "PlayStation 3", "PlayStation 4", "Game Boy Advance", "Game Boy"]), id:"platforms" %>
+      <div class="search">
+        <%= text_field_tag "title","search a game" ,id:"searchgame" %>
+         <%= submit_tag "Find", :id => "find" %>
+      </div>
     <% end %>
-    </div>
 </div>
-
 
 <% @collections.each do |collection| %>
   <%= link_to video_game_path(collection.video_game_id) do %>
