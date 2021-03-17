@@ -3,6 +3,7 @@ class VideoGame < ApplicationRecord
   def self.searchagame(query)
     require "uri"
     require "net/http"
+    require 'date'
     
     url = URI("https://api.igdb.com/v4/games")
     
