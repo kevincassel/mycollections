@@ -22,7 +22,7 @@
         <h2><%= collection.video_game.title %></h2>
         <h3><%= collection.video_game.platform %></h3>
         <p><%= collection.video_game.editor %></p>
-        <p><%= (Time.at(collection.video_game.year.to_i).to_datetime).to_s.first(4).to_i %></p>
+        <h4><%= (Time.at(collection.video_game.year.to_i).to_datetime).to_s.first(4).to_i %></h4>
   <% end %>
     <%= link_to collection_path(collection), method: :delete, data: { confirm: "Are you sure you want to delete this game out of your collection ?" } do %>
       <div id="minus">
@@ -32,7 +32,7 @@
     </div>
   </div>
 <% end %>
-
+ 
 
 <div>
   <%= link_to "add a game", new_collection_path %>
