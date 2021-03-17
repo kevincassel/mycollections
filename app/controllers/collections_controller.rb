@@ -1,19 +1,26 @@
 class CollectionsController < ApplicationController
 
   def index
-    if params[:query].present?
-      sql_query = " \
-        title ILIKE :query \
-        OR platform ILIKE :query \
-      "
-      @collections = Collection.joins(:video_game).where(sql_query, query: "%#{params[:query]}%")
-    else
-      @collections = Collection.all
+    # if params[:query].present?
+    #   sql_query = " \
+    #     title ILIKE :query \
+    #     OR platform ILIKE :query \
+    #   "
+    #   @collections = Collection.joins(:video_game).where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @collections = Collection.all
+    # end
+    @collections = Collection.joins(:video_game)
+    filtering_params(params).each do |key, value|
+      if key=="title"
+        @collections = @collections.where("#{key} ILIKE '%#{value}%'") if value.present?
+      else
+        @collections = @collections.where("#{key} = '#{value}'") if value.present?
+      end
     end
   end
 
-
-
+ 
   def show
     @collection = Collection.find(params[:id])
   end
@@ -69,6 +76,10 @@ class CollectionsController < ApplicationController
 
   def collection_params
     params.require(:collection).permit(:video_game)
+  end
+
+  def filtering_params(params)
+    params.slice(:platform, :title)
   end
 
 end
