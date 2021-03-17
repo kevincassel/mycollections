@@ -2,17 +2,13 @@
 
   <div class="show-top">
 
-    <div class="show-btn">
-        <%= link_to collections_path(video_game: @video_game), method: :post do %>
-          Add to my collection
-        <% end %>
-    </div>
-
-    <br />
-
     <img src= <%= @video_game.picture %> />
 
     <h1><%= @video_game.title %></h1>
+
+    <%= link_to collections_path(video_game: @video_game), method: :post do %>
+      <div id="show-btn">Add to my collection</div>
+    <% end %>
 
   </div>
 
