@@ -9,3 +9,26 @@
   border-radius: 5px;
   position: relative;
 }
+
+.encadrement {
+  height: 100px;
+  background: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(211, 211, 211, 0.541);
+  border-radius: 5px;
+  position: relative;
+  margin-top: 5px;
+  margin-right: 15px;
+  margin-left: 15px;
+  flex-direction: column;
+  background-color: #343A40;
+  color:white;
+}
+
+.encadrement h3 {
+  background: -webkit-linear-gradient( #00F191, #039BF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
