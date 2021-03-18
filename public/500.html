@@ -2,9 +2,12 @@
 <html>
 <head>
   <title>We're sorry, but something went wrong (500)</title>
+
+
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+  /* .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,17 +53,50 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  } */
+
+.dialog img{
+  margin-top: 20px;
+  width:400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow:  2px 2px 2px lightgray;
+  border-left: 30px;
+  border-right: 30px;
+}
+#err{
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-left: 30px;
+  border-right: 30px;
+
+}
+
+#texterr {
+  margin-top: 30px;
+  border-left: 30px;
+  border-right: 30px;
+  color: #343A40;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body>
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <div class="text-center" id="err">
+        <img src="https://i1.wp.com/fcnp.com/wp-content/uploads/2020/03/1004retro1web.jpg?fit=1800%2C1350&ssl=1" class="img-thumbnail" alt="...">
+      </div>
+      <h1 id="texterr">We're sorry, but something went wrong... have a nice day anyway ;-)</h1>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
