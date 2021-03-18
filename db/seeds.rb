@@ -86,11 +86,11 @@ end
 
 puts "Create Shops"
 
-Shop.create!(name: "Game", address: "74, Rue Faidherbe, 59800 Lille")
-Shop.create!(name: "Micromania", address: "51 Avenue Willy Brandt, 59000 Lille")
-Shop.create!(name: "Micromania", address: "52 Rue de Béthune, 59800 Lille")
-Shop.create!(name: "Micromania", address: "130 Rue du Grand But Lomme, 59160 Lille")
-Shop.create!(name: "Micromania", address: "46 Avenue de l'Avenir, 59650 Villeneuve-d'Ascq")
+Shop.create!(name: "Game", address: "74, Rue Faidherbe, 59800 Lille", image_url: "")
+Shop.create!(name: "Micromania", address: "51 Avenue Willy Brandt, 59000 Lille", image_url: "")
+Shop.create!(name: "Micromania", address: "52 Rue de Béthune, 59800 Lille", image_url: "")
+Shop.create!(name: "Micromania", address: "130 Rue du Grand But Lomme, 59160 Lille", image_url: "")
+Shop.create!(name: "Micromania", address: "46 Avenue de l'Avenir, 59650 Villeneuve-d'Ascq", image_url: "")
 
 puts "Finished !"
 
