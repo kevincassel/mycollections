@@ -29,7 +29,8 @@ class CollectionsController < ApplicationController
       api_key = ENV["BARCODE_API_KEY"]
       url = "https://api.barcodelookup.com/v2/products?barcode=#{params[:barecode]}&formatted=y&key=" + api_key
       uri = URI(url)
-      if response = Net::HTTP.get(uri) != "\n" && Net::HTTP.get(uri).start_with?('<!DOCTYPE html>\n<!')
+      if Net::HTTP.get(uri) != '\n'
+        response = Net::HTTP.get(uri)
         data = JSON.parse(response)
         barcode = data["products"][0]["barcode_number"]
         name = data["products"][0]["product_name"]
