@@ -1,5 +1,5 @@
 meta_product_name: "My Collection"
 meta_title: "My Collection"
 meta_description: "Collect, manage and share your video game collection"
-meta_image: "app/assets/images/favicon.ico" # should exist in `app/assets/images/`
+meta_image: "../app/assets/images/bg_home.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
