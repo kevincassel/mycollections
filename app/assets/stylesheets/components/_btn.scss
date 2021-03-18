@@ -40,6 +40,14 @@
   border: 1px solid rgba(211, 211, 211, 0.541);
 }
 
+
+.btnallgames a{
+  color:white;
+  background: linear-gradient( #00F191, #039BF6);  opacity: 0.9;
+  border: none;
+  box-shadow: 2px 2px 2px rgb(32, 201, 88);
+  margin: none;
+
 #addagame{
   border-radius: 4px;
   position: absolute;
@@ -64,4 +72,5 @@
   position: absolute;
   bottom:  -72px;
   left: 160px;
+
 }
