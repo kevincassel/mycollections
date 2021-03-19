@@ -55,10 +55,21 @@ initSweetalert('.sweet-alert-demo', {
 });
 
 
-initSweetalert('.sweet-alert-delete', {
-  title: "Good bye",
-  text: "the game have been delete from your collection",
-  icon: "warning"
-}, (value) => {
-  console.log(value);
+
+
+swal( '.sweet-alert-delete', {
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this game",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Poof! Your game has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your game is safe!");
+  }
 });
