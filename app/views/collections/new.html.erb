@@ -14,14 +14,31 @@
     </div>
   </div>
 
+
   <% @games_api.each do |game| %>
     <div class="card-product">
-      <img src= <%= game["cover"]["url"] %> />
-      <div class="card-product-infos">
-        <h2><%= game["name"] %></h2>
-        <h3><%= game["platforms"].first["name"] %></h3>
-        <h4><%= (Time.at(game["first_release_date"]).to_datetime).to_s.first(4) %></h4>
-      </div>
+      <% if game["cover"] == nil %>
+        <img src= "  https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg" >
+      <% else %>
+        <img src= <%= game["cover"]["url"] %> />
+      <% end %>
+        <div class="card-product-infos">
+          <% if game["name"] == nil %>
+            <h4></h4>
+          <% else %>
+            <h2><%= game["name"] %></h2>
+          <% end %>
+          <% if game["platforms"] == nil %>
+            <h4></h4>
+          <% else %>
+            <h3><%= game["platforms"].first["name"] %></h3>
+          <% end %>
+          <% if game["first_release_date"] == nil %>
+            <h4></h4>
+          <% else %>
+            <h4><%= (Time.at(game["first_release_date"]).to_datetime).to_s.first(4) %></h4>
+          <% end %>
+        </div>
         <%= link_to collections_path(game: game, query: params[:query]), method: :post do %>
           <img class="add-icon sweet-alert-demo" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0zMDQgNTEyaC05NmMtMTcuNjc5Njg4IDAtMzItMTQuMzIwMzEyLTMyLTMydi0xNDRoLTE0NGMtMTcuNjc5Njg4IDAtMzItMTQuMzIwMzEyLTMyLTMydi05NmMwLTE3LjY3OTY4OCAxNC4zMjAzMTItMzIgMzItMzJoMTQ0di0xNDRjMC0xNy42Nzk2ODggMTQuMzIwMzEyLTMyIDMyLTMyaDk2YzE3LjY3OTY4OCAwIDMyIDE0LjMyMDMxMiAzMiAzMnYxNDRoMTQ0YzE3LjY3OTY4OCAwIDMyIDE0LjMyMDMxMiAzMiAzMnY5NmMwIDE3LjY3OTY4OC0xNC4zMjAzMTIgMzItMzIgMzJoLTE0NHYxNDRjMCAxNy42Nzk2ODgtMTQuMzIwMzEyIDMyLTMyIDMyem0wIDAiIGZpbGw9IiM0OGM4ZWYiLz48L3N2Zz4="/>
         <% end %>
