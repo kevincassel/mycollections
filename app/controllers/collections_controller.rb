@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
     # else
     #   @collections = Collection.all
     # end
-    @collections = Collection.joins(:video_game)
+    @collections = Collection.where(user: current_user).joins(:video_game)
     filtering_params(params).each do |key, value|
       if key=="title"
         @collections = @collections.where("#{key} ILIKE '%#{value}%'") if value.present?
