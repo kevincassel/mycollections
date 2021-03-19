@@ -53,3 +53,12 @@ initSweetalert('.sweet-alert-demo', {
 }, (value) => {
   console.log(value);
 });
+
+
+initSweetalert('.sweet-alert-delete', {
+  title: "Good bye",
+  text: "the game have been delete from your collection",
+  icon: "warning"
+}, (value) => {
+  console.log(value);
+});
